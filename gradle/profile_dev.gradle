@@ -1,5 +1,3 @@
-import org.gradle.internal.os.OperatingSystem
-
 apply plugin: 'org.springframework.boot'
 apply plugin: 'com.moowork.node'
 
@@ -37,7 +35,7 @@ task webpackBuildDev(type: YarnTask) {
 
     outputs.files(fileTree("build/www/"))
 
-    dependsOn yarnInstall
+    dependsOn yarn_install
 
     args = ["run", "webpack:build"]
 }
